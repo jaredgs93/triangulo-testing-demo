@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Triangulo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">triangulo-testing-demo</a> &gt; <a href="index.source.html" class="el_package">iso2</a> &gt; <span class="el_source">Triangulo.java</span></div><h1>Triangulo.java</h1><pre class="source lang-java linenums">package iso2;
+
+public class Triangulo {
+
+    private int i;
+    private int j;
+    private int k;
+
+<span class="fc" id="L9">    public Triangulo() {}</span>
+
+<span class="fc" id="L11">    public void setI(int x) { this.i = x; }</span>
+<span class="fc" id="L12">    public void setJ(int y) { this.j = y; }</span>
+<span class="fc" id="L13">    public void setK(int z) { this.k = z; }</span>
+
+    public int getTipo() {
+
+        // No triángulo: desigualdad triangular o valores inválidos
+<span class="fc bfc" id="L18" title="All 6 branches covered.">        if (i &lt;= 0 || j &lt;= 0 || k &lt;= 0) {</span>
+<span class="fc" id="L19">            return 3; // NT</span>
+        }
+<span class="fc bfc" id="L21" title="All 6 branches covered.">        if (i + j &lt;= k || i + k &lt;= j || j + k &lt;= i) {</span>
+<span class="fc" id="L22">            return 3; // NT</span>
+        }
+
+        // Equilátero
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if (i == j &amp;&amp; j == k) {</span>
+<span class="fc" id="L27">            return 0; // EQ</span>
+        }
+
+        // Isósceles
+<span class="fc bfc" id="L31" title="All 6 branches covered.">        if (i == j || i == k || j == k) {</span>
+<span class="fc" id="L32">            return 1; // IS</span>
+        }
+
+        // Escaleno
+<span class="fc" id="L36">        return 2; // ES</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
